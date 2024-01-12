@@ -1,1 +1,1 @@
-# Курс Network Engineer. Basic от OTUS
+# Курс Network Engineer. Basic от [OTUS](https://otus.ru)
