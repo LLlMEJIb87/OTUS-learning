@@ -34,4 +34,4 @@ S1(config-line)#exit
 ```
 8. Установил пароль сlass на вход в привилегированный режим командой "enable secret"
 
-[__Продолжение__](https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/readme2.md)
+[__Продолжение__](https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/prodoljenie.md)
