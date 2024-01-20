@@ -3,12 +3,12 @@ _ _ _
 
 
 1. Подключился к коммутатору ( в порт console) консольным кабелем. Для входа в СLI использовал ПО PUTTY.
-         <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
 
 __Таблица адресации:__
 
 | Устройство       | Интерфейс         | IP адрес / префикс |
-| ------------- |:------------------:| :|
+| ------------- |:------------------:|------------------:|
 | S1     | VLAN 1 | 192.168.1.1/24 | 
 | PC - A | NIC |  192.168.1.2/24 |
 
@@ -33,3 +33,5 @@ S1(config-line)#login
 S1(config-line)#exit
 ```
 8. Установил пароль сlass на вход в привилегированный режим командой "enable secret"
+
+[__Продолжение__](https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/readme2.md)
