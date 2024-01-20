@@ -22,6 +22,8 @@ __Таблица адресации:__
    - PC-A  FE80::20A:41FF:FE00:56D7
    - PC-B  FE80::201:63FF:FEA9:29BC
 5. На коммутаторах при помощи команды "show" посмотрел MAC адреса физических интерфейсов к которым подключены узлы ПК
-- S1 interface f0/1 000a.f30a.2101
-- S2 interface f0/1 0060.2f40.0301
-6. На коммуаторе S1 очистил таблицу коммутации командой "clear" mac addres-table. Командой "show" mac addres-table убедился, что таблица пуста
+   - S1 interface f0/1 000a.f30a.2101
+   - S2 interface f0/1 0060.2f40.0301
+6. На коммуаторе S1 очистил таблицу коммутации командой "clear" mac addres-table. Командой "show" mac addres-table убедился, что таблица пустая
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/pustaya-tablica-mac.PNG">
+7.
