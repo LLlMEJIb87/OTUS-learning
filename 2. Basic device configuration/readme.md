@@ -3,7 +3,15 @@ _ _ _
 
 
 1. Подключился к коммутатору ( в порт console) консольным кабелем. Для входа в СLI использовал ПО PUTTY.
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
+         <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
+
+__Таблица адресации:__
+
+| Устройство       | Интерфейс         | IP адрес / префикс |
+| ------------- |:------------------:| :|
+| S1     | VLAN 1 | 192.168.1.1/24 | 
+| PC - A | NIC |  192.168.1.2/24 |
+
 
 2. Вошёл в привилегированный режим "enable" и убедился командой "show" startup-config, что коммутатор имееет настройки по умолчанию.
 3. Вошёл в глобальный режим конфигурации "configure terminal" и командой "hostname"S1  сменил имя коммутатора.
@@ -25,12 +33,3 @@ S1(config-line)#login
 S1(config-line)#exit
 ```
 8. Установил пароль сlass на вход в привилегированный режим командой "enable secret"
-9. Для возможности удаленного подключения к коммутатору по сети настроил ip на виртуальном интефейсе коммутатора vlan 1
-```
-S1(config)#interface vlan 1
-S1(config-if)#ip address 192.168.1.1 255.255.255.0
-S1(config-if)#no shutdown
-```
-10. Задал на ПК адрес из тойже подсети, что и коммутатор - 192.168.1.2/24 и кинул патчкорд от сетевой карты ПК до коммутатора порт FastEthernet0/6
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_ethernet.PNG">
-11. На ПК через командную строку командой "ping" 192.168.1.1 проверил доступность коммутатора, далее подключился по Telnet к коммутатору S1 192.168.1.1 Сохранил конфиг командой "copy startup-config running-config"
