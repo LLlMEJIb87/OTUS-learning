@@ -11,5 +11,5 @@
 
 ## Ethernet.
 <p align="center">
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
 </p>
