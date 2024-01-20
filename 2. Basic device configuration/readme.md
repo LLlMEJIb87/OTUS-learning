@@ -1,7 +1,7 @@
 # Базовая настройка коммутатора Cisco<br>
 _ _ _
 1. Подключился к коммутатору ( в порт console) консольным кабелем. Для входа в СLI использовал ПО PUTTY.
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
+                               <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
 
 __Таблица адресации:__
 
@@ -37,7 +37,7 @@ S1(config-if)#no shutdown
 ```
 10. Задал на ПК адрес из тойже подсети, что и коммутатор - 192.168.1.2/24 и кинул патчкорд от сетевой карты ПК до коммутатора порт FastEthernet0/6
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_ethernet.PNG">
-11. На ПК через командную строку командой "ping" 192.168.1.1 проверил доступность коммутатора
+11. На ПК через командную строку командой "ping" 192.168.1.1 проверил доступность коммутатора   
 12. подключился по Telnet к коммутатору S1 192.168.1.1
 13. Сохранил конфиг командой "copy startup-config running-config"
 
