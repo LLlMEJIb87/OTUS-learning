@@ -28,4 +28,8 @@ __Таблица адресации:__
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/pustaya-tablica-mac.PNG">
 7. C ПК B послал ICMP запрос на ПК А , через командную строку командой "ping" 192.168.1.2
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/ping-B-to-A.PNG">
-8. На коммутаторе S1 посмотрел таблицу комутации
+8. На коммутаторе S1 посмотрел таблицу комутации после ICMP запроса
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/tablica-mac.PNG">
+Из таблицы коммутации становится ясно, что есть активные узлы за портами коммутатора:
+   - за портом fastethernet0/1 MAC FE80::20A:41FF:FE00:56D7 ПК A
+   - за портом gigabitethernet0/1 MAC FE80::201:63FF:FEA9:29BC ПК B и MAC интерфейса G0/1 свитча S2 G0/1 0060.2f40.0319 к которому подключен S1
