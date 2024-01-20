@@ -1,7 +1,7 @@
 # Базовая настройка коммутатора Cisco<br>
 _ _ _
 1. Подключился к коммутатору ( в порт console) консольным кабелем. Для входа в СLI использовал ПО PUTTY.
-                               <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
+<img width="460" height="300" src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/2.%20Basic%20device%20configuration/podkluchenie_konsol'u.PNG">
 
 __Таблица адресации:__
 
