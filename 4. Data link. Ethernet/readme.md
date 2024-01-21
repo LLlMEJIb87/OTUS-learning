@@ -19,11 +19,11 @@ __Таблица адресации:__
 2. Настроил адресацию узлов ПК
 3. Настроил адресацию и базовые настройки коммутаторов
 4. В командной строке узлов ПК при помощи команды "ipconfig/all" посмотрел MAC адреса:
-   * PC-A  000a.4100.56d7
-   * PC-B  0001.63a9.29bc       
+PC-A  000a.4100.56d7
+PC-B  0001.63a9.29bc       
 5. На коммутаторах при помощи команды "show" interface G0/1 посмотрел MAC адреса физических интерфейсов которыми скомутированы между собой S1 и S2
-   * S1 interface G0/1 000a.f30a.2119
-   * S2 interface G0/1 0060.2f40.0319
+S1 interface G0/1 000a.f30a.2119
+S2 interface G0/1 0060.2f40.0319
 6. На коммуаторе S1 очистил таблицу коммутации командой "clear" mac address-table. Командой "show" mac address-table убедился, что таблица пустая
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/pustaya-tablica-mac.PNG">
 7. C ПК B послал ICMP запрос на ПК А , через командную строку командой "ping" 192.168.1.2
@@ -32,8 +32,8 @@ __Таблица адресации:__
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/tablica-mac.PNG">
 
 Из таблицы коммутации я вижу, что есть активные узлы за портами коммутатора:
-   * за портом fastethernet0/1 MAC 000a.4100.56d7 ПК A
-   * за портом gigabitethernet0/1 MAC 0001.63a9.29bc ПК B и MAC интерфейса G0/1 свитча S2 G0/1 0060.2f40.0319
+за портом fastethernet0/1 MAC 000a.4100.56d7 ПК A
+за портом gigabitethernet0/1 MAC 0001.63a9.29bc ПК B и MAC интерфейса G0/1 свитча S2 G0/1 0060.2f40.0319
 9. С ПК B пропинговал ПК А, S1, S2. Далее на ПК B командой "arp" -a посмотрел arp таблицу
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/arp.PNG">
 Основная задача протокола ARP – получить L2 адрес устройства при известном L3 адресе устройства, для взаимодействия устройтсв на канальном уровне L2.
