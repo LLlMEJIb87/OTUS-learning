@@ -14,5 +14,5 @@
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
 </p>
 
-### Arp.
-Основная задача протокола – получить L2 адрес устройства при известном L3 адресе устройства.
+
+### [ Уровень 3: Сетевой.](https://github.com/LLlMEJIb87/OTUS-learning/tree/master/5.%20Network%20layer.%20IP)
