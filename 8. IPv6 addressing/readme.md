@@ -8,6 +8,22 @@ _ _ _
 - Задал IPv6 адрес коммутатору S1
 ```
 S1(config)#interface vlan 1
+S1(config-if)#no shutdown
 S1(config-if)#ipv6 address 2001:db8:acad:1::b/64
 S1(config-if)#exit
+```
+4. Настройки маршрутизатора:
+- Активировал маршрутизацию на роутере командой IPv6 unicast-routing
+- Настроил интерфейсы
+```
+R1(config)#Interface GigabitEthernet0/0/0
+R1(config-if)#no shutdown
+R1(config-if)#ipv6 address 2001:db8:acad:a::1/64
+R1(config-if)#exit
+```
+```
+R1(config)#interface g0/0/1
+R1(config-if)#no shutdown
+R1(config-if)#2001:db8:acad:1::1/64
+R1(config-if)#exit
 ```
