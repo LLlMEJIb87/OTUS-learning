@@ -19,11 +19,15 @@ S1(config-if)#exit
 R1(config)#Interface GigabitEthernet0/0/0
 R1(config-if)#no shutdown
 R1(config-if)#ipv6 address 2001:db8:acad:a::1/64
+R1(config-if)#ipv6 address fe80::1 link-local
 R1(config-if)#exit
 ```
 ```
 R1(config)#interface g0/0/1
 R1(config-if)#no shutdown
 R1(config-if)#2001:db8:acad:1::1/64
+R1(config-if)#ipv6 address fe80::1 link-local
 R1(config-if)#exit
 ```
+5. Настроил  интерфейсы на PC-A и PC-B согласно схемы.
+6. Проверил доступность узлов PC-A и PC-B командой ping
