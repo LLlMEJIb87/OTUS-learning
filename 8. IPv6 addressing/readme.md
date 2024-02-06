@@ -1,6 +1,14 @@
 # Лабораторная работа. Настройка IPv6-адресов на сетевых устройствах 
 _ _ _
 
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/8.%20IPv6%20addressing/shema_seti.PNG">
+</p>
+
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/8.%20IPv6%20addressing/tablica_adresacii.PNG">
+</p>
+
 1. Собрал и подключил тестовый стенд в эмуляторе cisco packet tracer
 2. Сделал первоначальную настройку коммутатора и маршрутизатора
 3. Настройка коммутатора:
@@ -31,3 +39,5 @@ R1(config-if)#exit
 ```
 5. Настроил  интерфейсы на PC-A и PC-B согласно схемы.
 6. Проверил доступность узлов PC-A и PC-B командой ping
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/8.%20IPv6%20addressing/ping_PC_A_to_B.PNG">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/8.%20IPv6%20addressing/ping_PC_B_to_A.PNG">
