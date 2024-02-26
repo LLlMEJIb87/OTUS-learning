@@ -1,13 +1,11 @@
 # Лабораторная работа. Доступ к сетевым устройствам по протоколу SSH<br>
 _ _ _
-
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/11.%20Basics%20of%20Network%20security/topologiya.PNG">
 </p>
 <div align="center">
 
 <div align="center">
-
 __Таблица адресации:__
 | Устройство       | Интерфейс         | IP адрес / префикс | Шлюз по умолчанию
 | ------------- |:------------------:|------------------:|------------------:|
