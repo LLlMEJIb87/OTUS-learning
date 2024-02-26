@@ -63,7 +63,7 @@ R1(config-if)#exit
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/11.%20Basics%20of%20Network%20security/ping.PNG">
 
 7.Приступил к базовым настройкам безопасности:
-- Установил минимально допкстимую длину пароля R1(config)#security passwords min-length 5
+- Установил минимально допустимую длину пароля R1(config)#security passwords min-length 5
 - Установил пароль на вход в привилегированный режим "enable secret" cisco
 - Командой "service password-encryption" задал шифрование паролей
 - Для предотвращения взлома путем подбора паролей использовал команду R1(config)#login block-for 120 attempts 3 within 60
