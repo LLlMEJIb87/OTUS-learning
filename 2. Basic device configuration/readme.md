@@ -51,3 +51,5 @@ S1(config-if)#no shutdown
 
 13. Сохранил конфиг командой "copy startup-config running-config"
 
+### [ ПРОДОЛЖЕНИЕ ](https://github.com/LLlMEJIb87/OTUS-learning/blob/master/11.%20Basics%20of%20Network%20security/readme.md)
+
