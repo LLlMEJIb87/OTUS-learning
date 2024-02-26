@@ -41,7 +41,9 @@ S1(config-line)#transport input ssh
 S1(config-line)#exit
 ```
 - проверил возможность подключения по протоколу ssh c PC-A
+
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/11.%20Basics%20of%20Network%20security/ssh_s1.PNG">
+
 6. Приступил к настройке маршрутизатора, выполнил первоначальные настройки
 - Задал имя "hostname"R1
 - Активировал маршрутизацию R1(config)#ip routing
@@ -53,3 +55,5 @@ R1(config-if)#no shutdown
 ```
 - создал баннер предупреждение S1(config)# banner motd "This is a secure system. Authorized Access Only!"
 - проверил доступность узлов в сети
+
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/11.%20Basics%20of%20Network%20security/ping.PNG>
