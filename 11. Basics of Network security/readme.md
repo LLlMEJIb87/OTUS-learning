@@ -57,7 +57,7 @@ R1(config-if)#exit
 - создал баннер предупреждение S1(config)# banner motd "This is a secure system. Authorized Access Only!"
 - проверил доступность узлов в сети
 
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/11.%20Basics%20of%20Network%20security/ping.PNG>"
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/11.%20Basics%20of%20Network%20security/ping.PNG">
 
 7.Приступил к базовым настройкам безопасности:
 - Установил минимально допкстимую длину пароля R1(config)#security passwords min-length 5
@@ -84,3 +84,5 @@ S1(config-line)#transport input ssh
 S1(config-line)#exit
 ```
 - проверил возможность подключения по протоколу ssh c PC-A на R1, c R1 на S1, с S1 на R1
+
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/11.%20Basics%20of%20Network%20security/ssh_r1_s1_r1.PNG">
