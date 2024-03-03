@@ -58,7 +58,7 @@ S1(config-if-range)#switchport trunk allowed vlan 10,20,30,1000
 - проверил  настройки trunk порта командой show interfaces trunk
 5. Настройка маршрутизатора R1:
 - включил интерфейс G0/0/1
-- Настроил sub интерфейсы на интерфейсе G0/0/1, назначил каждому vlan в соответсвие c таблицой vlan, настроил на sub интерфейсах адресацию ipv4:
+- Настроил sub интерфейсы на интерфейсе G0/0/1, назначил каждый в vlan в соответсвие c таблицой vlan, настроил на sub интерфейсах адресацию ipv4:
 ```
 Router(config)#interface gigabitEthernet 0/0/1.10
 Router(config-subif)#encapsulation dot1Q 10
