@@ -33,3 +33,4 @@ Switch(config-if-range)#exit
 - назначил порт F0/24, к которому подключен хост PC-A в vlan 20 sales
 - командой show vlan brief убедился, что vlan назначены на правильные интерфейсы
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/show_vlan_S1.PNG">
+- настроил порты G0/1,G0/2 в режиме trunk, указал какие vlan могут проходить по trunk, установил native vlan
