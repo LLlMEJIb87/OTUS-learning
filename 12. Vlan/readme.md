@@ -4,17 +4,14 @@ _ _ _
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/topologiya.PNG">
 </p>
-<div align="center">
 
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/tablica_adresacii.PNG">
 </p>
-<div align="center">
 
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/tablica_vlan.PNG">
 </p>
-<div align="center">
 
 1. Подключил сеть согласно топологии.
 2. Сделал первоначальные настройки коммутаторов и маршрутизатора.
@@ -35,3 +32,4 @@ Switch(config-if-range)#exit
 ```
 - назначил порт F0/24, к которому подключен хост PC-A в vlan 20 sales
 - командой show vlan brief убедился, что vlan назначены на правильные интерфейсы
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/show_vlan_S1.PNG">
