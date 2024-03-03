@@ -32,7 +32,9 @@ Switch(config-if-range)#exit
 ```
 - назначил порт F0/24, к которому подключен хост PC-A в vlan 20 sales
 - командой show vlan brief убедился, что vlan назначены на правильные интерфейсы
+
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/show_vlan_S1.PNG">
+
 - настроил порты G0/1,G0/2 в режиме trunk, указал какие vlan могут проходить по trunk, назначил native vlan
 ```
 S1(config)#interface range gigabitEthernet 0/1-2
@@ -40,8 +42,11 @@ S1(config-if-range)#switchport mode trunk
 S1(config-if-range)#switchport trunk native vlan 1000
 S1(config-if-range)#switchport trunk allowed vlan 10,20,30,1000
 ```
+
 - проверил  настройки trunk портов командой show interfaces trunk
+
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/show_trunk_S1.PNG">
+
 4. Настройка коммутатора S2:
 - создал vlan 10,20,30,999,1000 согласно таблицы vlan, задал имя для каждой
 - для возможности удаленного подключения к коммутатору по сети настроил ip на виртуальном интефейсе коммутатора vlan 10 S1(config-if)#ip address 192.168.10.12 255.255.255.0
