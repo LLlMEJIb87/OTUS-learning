@@ -62,17 +62,17 @@ S1(config-if-range)#switchport trunk allowed vlan 10,20,30,1000
 ```
 Router(config)#interface gigabitEthernet 0/0/1.10
 Router(config-subif)#encapsulation dot1Q 10
-Router(config-subif)#ip address 192.168.10.1
+Router(config-subif)#ip address 192.168.10.1 255.255.255.0
 Router(config-subif)#description upravlenie
 Router(config-subif)#exit
 Router(config)#interface gigabitEthernet 0/0/1.20
 Router(config-subif)#encapsulation dot1Q 20
-Router(config-subif)#ip address 192.168.20.1
+Router(config-subif)#ip address 192.168.20.1 255.255.255.0
 Router(config-subif)#description sales
 Router(config-subif)#exit
 Router(config)#interface gigabitEthernet 0/0/1.30
 Router(config-subif)#encapsulation dot1Q 30
-Router(config-subif)#ip address 192.168.30.1
+Router(config-subif)#ip address 192.168.30.1 255.255.255.0
 Router(config-subif)#description operations
 Router(config-subif)#exit
 Router(config)#interface gigabitEthernet 0/0/1.1000
@@ -81,4 +81,8 @@ Router(config-subif)#description native
 Router(config-subif)#exit
 ```
 - командой show ip interfaces brief убедился, что нужные интерфейсы имееют состояние UP
+
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/show_interfaces_r1.PNG">
+
+6. Назначил адресацию хостам и убедился, что маршрутизация между vlan работает
 
