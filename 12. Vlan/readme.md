@@ -86,3 +86,5 @@ Router(config-subif)#exit
 
 6. Назначил адресацию хостам и убедился, что маршрутизация между vlan работает
 
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/12.%20Vlan/ping_A_to_B.PNG">
+
