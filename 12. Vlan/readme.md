@@ -76,7 +76,7 @@ Router(config-subif)#ip address 192.168.30.1 255.255.255.0
 Router(config-subif)#description operations
 Router(config-subif)#exit
 Router(config)#interface gigabitEthernet 0/0/1.1000
-Router(config-subif)#encapsulation dot1Q 1000
+Router(config-subif)#encapsulation dot1Q 1000 native
 Router(config-subif)#description native
 Router(config-subif)#exit
 ```
