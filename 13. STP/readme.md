@@ -1,9 +1,7 @@
 # Лабораторная работа. Развертывание коммутируемой сети с резервными каналами
 _ _ _
+<p style="text-align: center;">__Топология__</p>
 <p align="center">
-
-__Топология__
-
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/13.%20STP/topologiya.PNG">
 </p>
 <div align="center">
