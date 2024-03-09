@@ -29,6 +29,7 @@ __Таблица адресации__
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/13.%20STP/show_spannig-tree_1.PNG">
 
 5. Cхема с состоянием и ролью активных портов
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/13.%20STP/rol_portov_1.PNG">
 
 - все три коммутатора имеют равные значения приоретета идентификатора моста, следовательно коммутатор S2 имея самое низкое значение MAC-адреса стал корневым
 - корневыми портами на коммутаторах S1 и S3 стали порты Fe0/4 
