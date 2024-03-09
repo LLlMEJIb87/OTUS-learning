@@ -4,7 +4,6 @@ _ _ _
 
 __Топология__
 
-<p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/13.%20STP/topologiya.PNG">
 </p>
 <div align="center">
