@@ -26,3 +26,4 @@ __Таблица адресации__
 2. Перевел все подключенные порты в режим trunk
 3. Включил порты Fe0/2 и Fe0/4 на всех коммутаторах
 4. Командой show spanning- tree отобразил данные протокола spanning-tree
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/13.%20STP/show_spannig-tree_1.PNG">
