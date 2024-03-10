@@ -57,3 +57,4 @@ S1(config-if)#no spanning-tree vlan 1 cost 18
 1. Включил порты Fe0/1 и Fe0/3 на всех коммутаторах
 2. Cмотрим изменения
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/13.%20STP/show_spannig-tree_3.png">
+3. Видим, что корневым портом на коммутаторах S1 и S3 был выбран порт Fe0/3 так как имеет более низкий приоритет 128.3, в сравнение с выбранными ранее портами Fe0/4 128.4
