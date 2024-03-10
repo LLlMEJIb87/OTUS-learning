@@ -43,5 +43,6 @@ __Таблица адресации__
 S1(config)# interface f0/4
 S1(config-if)# spanning-tree vlan 1 cost 18
 ```
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/13.%20STP/show_spannig-tree_2.png">
 
 
