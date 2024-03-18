@@ -32,4 +32,13 @@ S1(config-if)#channel-group 1 mode active - определяем в port-channel
 S1(config-if)#no shutdown  - включаем интерфейс
 ```
 Настройка на первом коммутаторе окончена, проверить можно командой show etherchannel port-channel
+  
+Переходим к настройке второго коммутатора
+```
+S2(config)#interface range gigabitEthernet 0/1-2 - переходим к настройке сразу нескольких интерфейсов.
+S2(config-if-range)#shutdown - выключаем их
+S2(config-if-range)#channel-group 1 mode passive - создаем port-channel и переводим в режим passive (включится, когда получит LACP-сообщение).
+S2(config-if-range)#no shutdown - обратно включаем
+````
+После этого канал согласуется. Посмотреть на это можно командой show etherchannel summary
 
