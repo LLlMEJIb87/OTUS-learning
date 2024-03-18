@@ -40,5 +40,5 @@ S2(config-if-range)#shutdown - выключаем их
 S2(config-if-range)#channel-group 1 mode passive - создаем port-channel и переводим в режим passive (включится, когда получит LACP-сообщение).
 S2(config-if-range)#no shutdown - обратно включаем
 ````
-После этого канал согласуется. Посмотреть на это можно командой _show_ _etherchannel_ _summary_
+После этого канал согласуется. Посмотреть на это можно командой **_show_ _etherchannel_ _summary_**
 
