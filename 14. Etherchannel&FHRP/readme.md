@@ -62,7 +62,6 @@ Cемейство протоколов, предназначенных для с
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/14.%20Etherchannel%26FHRP/VRRP.PNG">
 </p>
-<div align="center">
 
 VRRP-маршрутизаторы объединяются в один виртуальный маршрутизатор. Все маршрутизаторы в группе имеют общий виртуальный IP (VIP) адрес и общий номер группы или VRID (Virtual Router Identifier). Один маршрутизатор может состоять в нескольких группах, каждая из которых должна иметь свою уникальную пару VIP/VRID.
   
