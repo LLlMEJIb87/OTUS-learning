@@ -8,3 +8,30 @@ DHCP (от англ. Dynamic Host Configuration Protocol — протокол д
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/dhcpv4.PNG">
 </p>
+  
+Настройка DHCPv4 на маршрутизаторе CISCO
+```
+R2(config)#ip dhcp excluded-address 192.168.10.1 192.168.10.9 - исключить из выдачи адреса с 1го по 9ый
+R2(config)#ip dhcp excluded-address 192.168.10.254 -исключить из выдачи один адрес
+R2(config)#ip dhcp pool LAN_POOL -задать имя пулу и перейти в концигурацию
+R2(dhcp-config)#network 192.168.10.0 255.255.255.0 задаём сеть и маску для выдачи
+R2(dhcp-config)#default-router 192.168.10.1 - задаём шлюз по умолчанию
+R2(dhcp-config)#dns-server 192.168.11.5 - задаём адрес dns сервера
+R2(dhcp-config)#domain-name example.com - задаём доменное имя
+```
+  
+Проверка работы DHCPv4
+1. Show running-config | section dhcp - отображает команды DHCP настроенные на маршрутизаторе
+2. Show ip dhcp binding - отображает список всех привязок IPv4 к MAC адресам, предоставляемой службой DHCPv4
+3. show ip dhcp server statistics - отображает информацию о кол-ве принятых и отправленных сообщений DHCPv4
+  
+Отключение службы DHCP:
+- no service dhcp -команда отключает службу, по умолчанию служба включена.
+  
+Ретрансляция DHCPv4  (Relay) - требуется, когда сервер DHCP и клиенты находятся в разных подсетях
+```
+R2(config)#interface gigabitEthernet 0/0 - заходим на интерфейс
+R2(config-if)#ip helper-address 192.168.11.6 - указываем куда ретранслировать полученный dhcp запрос
+```
+Когда маршрутизатор сконфигурирован как DHCP агент ретрансляции, он принимает широковещательные запросы, а затем отправляет эти запросы как одноадресную рассылку на IPv4-адрес
+
