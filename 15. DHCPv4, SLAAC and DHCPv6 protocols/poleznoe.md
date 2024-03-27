@@ -54,5 +54,36 @@ _ _ _
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/SLAAC%2BDHCPv6.PNG">
 </p>
   
-Вклюение протокола DHCPv6 без сохранения сотояния на интерфейсе осуществляется командой __**IPv6 nd other-config-flag**__
+Настройка протокола DHCPv6 без сохранения сотояния 
+```
+Router(config)#ipv6 dhcp pool  TEST - задаём имя пула ipv6
+Router(config-dhcpv6)#dns-server 2001:db8:acad:1::2 - указываем адрес DNS сервере в рассылки RA
+Router(config-dhcpv6)#domain-name TEST_TESTOV.com -указываем доменное имя в рассылке RA
+Router(config-dhcpv6)#exit
+Router(config)#interface gigabitEthernet 0/1 - заходим на интерфей, который смотрит в нашу локальную сеть
+Router(config-if)#ipv6 dhcp server TEST - привязываем интерфейс к пулу
+Router(config-if)#ipv6 nd other-config-flag указываем  в каком режиме будут получать адресацию хосты
+```
+
+__**show ipv6 interface g0/1**__ | begin ND посмотреть настройки интерфейса ipv6 ND neighbor discovery
+
+# DHCPv6
+_ _ _
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/dhcpv6.PNG">
+</p>
   
+Настройка протокола DHCPv6 с сохранением сотояния 
+```  
+Router(config)#ipv6 dhcp pool NEW_TEST
+Router(config-dhcpv6)#address prefix 2001:db8:acad:1::/64
+Router(config-dhcpv6)#dns-server 2001:db8:acad:1::2
+Router(config-dhcpv6)#domain-name TEST_TESTOV.com
+Router(config-dhcpv6)#exit
+Router(config)#interface gigabitEthernet 0/2
+Router(config-if)#ipv6 dhcp server NEW_TEST
+Router(config-if)#ipv6 nd managed-config-flag 
+```
+__**Show ipv6 dhcp pool**__ - посмотреть настройки DHCPv6
+
+__**Show ipv6 dhcp binding**__ - отображает ipv6 локального адреса канала и GUI адреса назначенного сервером
