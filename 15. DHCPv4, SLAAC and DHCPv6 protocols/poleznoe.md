@@ -44,5 +44,7 @@ SLAAC - Stateless Address Auto-configuration Метод позволяющий �
   
 Включение SLAAC происходит автоматически при включение маршрутизации IPv6 на роутере и настройки IPv6 адресации на интерфейсе.
   
-
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/SLAAC.PNG">
+</p>
 
