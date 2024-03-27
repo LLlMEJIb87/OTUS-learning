@@ -48,3 +48,11 @@ SLAAC - Stateless Address Auto-configuration Метод позволяющий �
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/SLAAC.PNG">
 </p>
 
+# SLAAC + DHCPv6
+_ _ _
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/SLAAC%2BDHCPv6.PNG">
+</p>
+  
+Вклюение протокола DHCPv6 без сохранения сотояния на интерфейсе осуществляется командой __**IPv6 nd other-config-flag**__
+  
