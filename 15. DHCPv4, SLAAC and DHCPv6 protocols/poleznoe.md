@@ -93,4 +93,4 @@ __**Show ipv6 dhcp binding**__ - отображает ipv6 локального 
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/DHCP%20_relay.PNG">
 </p>
   
-Проверка relay осуществляется командой __**Show ipv6 dhcp interface**
+Проверка relay осуществляется командой __**Show ipv6 dhcp interface**__
