@@ -130,5 +130,15 @@ R1(dhcp-config)#exit
 3. Проверил конфигурацию сервера DHCPv4
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/Show_dhcpv4.PNG">
 
-4. Получение IP адреса на PC-A и проверка маршрутизации, пинг R2 g0/0/1
+4. Получение IP адреса на PC-A и проверка доступности, пинг R2 g0/0/1
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/ping_R2.PNG">
+  
+### Часть 3.Настройка и проверка DHCP-ретрансляции на R2
+1. Настройка R2 в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1
+```
+R2(config)#interface gigabitEthernet 0/0/1
+R2(config-if)#ip helper-address 10.0.0.1
+R2(config-if)#end
+R2#copy running-config startup-config
+```
+2. Получение IP адреса на PC-B и проверка доступности PC-A
