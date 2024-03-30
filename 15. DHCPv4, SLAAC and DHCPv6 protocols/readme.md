@@ -4,6 +4,7 @@ _ _ _
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/Lab_dhcp4_topologia.PNG">
 </p>
+
 ### Часть 1.Создание сети и настройка основных параметров устройства
 1. Создал схему адресации разбив сеть 192.168.1.0/24 на подсети:
 - 192.168.1.0/26 - (клиентская VLAN на R1)
