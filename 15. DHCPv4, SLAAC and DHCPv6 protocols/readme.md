@@ -55,13 +55,13 @@ R2(config-if)#exit
 ```
 R1(config)#ip route 0.0.0.0 0.0.0.0 10.0.0.2
 ```
-- - настроил маршрут по умолчанию на R2
+- настроил маршрут по умолчанию на R2
 ```
 R2(config)#ip route 0.0.0.0 0.0.0.0 10.0.0.2
 ```
 - сохранил кофиг
 6. Настроил базовые параметры каждого коммутатора
-7. Создал сети VLAN на коммутаторе S1, настроил и активировал интерфейс управления, неиспользуемы порты назначил в vlan 999 и административно отключил их
+7. Создал сети VLAN на коммутаторе S1, настроил и активировал интерфейс управления, неиспользуемы порты назначил в vlan 999 и административно отключил их. Настроил коммутатор S2
 ```
 S1(config)#vlan 100
 S1(config-vlan)#name clients
@@ -85,7 +85,14 @@ S1(config-if-range)#switchport access vlan 999
 S1(config-if-range)#shutdown 
 S1(config-if-range)#exit
 ```
-8. Настроил активные интерфейсы
+```
+Switch(config)#interface vlan 1
+Switch(config-if)#ip address 192.168.1.98 255.255.255.224
+Switch(config-if)#exit
+Switch(config)#ip default-gateway 192.168.1.97
+Switch(config)#exit
+```
+8. Настроил активные интерфейсы на коммутаторе S1
 ```
 S1(config)#interface fastEthernet 0/6
 S1(config-if)#switchport mode access 
@@ -97,4 +104,28 @@ S1(config-if)#switchport trunk allowed vlan 100,200,1000
 S1(config-if)#switchport trunk native vlan 1000
 S1(config-if)#exit
 ```
-1
+### Часть 2.Настройка и проверка двух серверов DHCPv4 на R1
+1.Настроил R1 с пулами DHCPv4 для двух поддерживаемых подсетей
+- Исключил первые 5 используемых ip адресов из  пула адресов для клиентов
+```
+R1(config)#ip dhcp excluded-address 192.168.1.1 192.168.1.5
+R1(config)#ip dhcp excluded-address 192.168.1.97 192.168.1.101
+```
+- Создал и настроил пул ip адресов для клиентских подсетей 
+```
+R1(config)#ip dhcp pool R1_Clients_LAN
+R1(dhcp-config)#network 192.168.1.0 255.255.255.192
+R1(dhcp-config)#default-router 192.168.1.1
+R1(dhcp-config)#domain-name CCNA-lab.com
+R1(dhcp-config)#lease 2 12 30 - не поддерживается в CPT	
+R1(dhcp-config)#exit
+R1(config)#ip dhcp pool R2_Clients_LAN
+R1(dhcp-config)#network 192.168.1.96 255.255.255.240
+R1(dhcp-config)#default-router 192.168.1.97
+R1(dhcp-config)#domain-name CCNA-lab.com
+R1(dhcp-config)#lease 2 12 30 - не поддерживается в CPT	
+R1(dhcp-config)#exit
+```
+2. Сохранил конфиг
+3. Проверил конфигурацию сервера DHCPv4
+4. Получение IP адреса на PC-A и проверка маршрутизации, пинг R2 g0/0/1
