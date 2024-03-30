@@ -96,3 +96,4 @@ S1(config-if)#switchport trunk allowed vlan 100,200,1000
 S1(config-if)#switchport trunk native vlan 1000
 S1(config-if)#exit
 ```
+1
