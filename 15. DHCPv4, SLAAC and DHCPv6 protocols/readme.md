@@ -142,3 +142,4 @@ R2(config-if)#end
 R2#copy running-config startup-config
 ```
 2. Получение IP адреса на PC-B и проверка доступности PC-A
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/ping_B_to_A.PNG">
