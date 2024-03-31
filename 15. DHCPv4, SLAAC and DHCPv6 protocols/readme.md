@@ -148,6 +148,7 @@ R2#copy running-config startup-config
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/Lab_dhcp6_topologia.PNG">
 </p>
+
 ### Часть 1.Создание сети и настройка основных параметров устройства
 1. Подключил устройства согласно топологии
 2. Настроил базовые параметры каждого коммутатора
