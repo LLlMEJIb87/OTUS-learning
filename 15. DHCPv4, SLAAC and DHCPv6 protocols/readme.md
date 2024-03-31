@@ -143,3 +143,39 @@ R2#copy running-config startup-config
 ```
 2. Получение IP адреса на PC-B и проверка доступности PC-A
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/ping_B_to_A.PNG">
+  
+## DHCPv6
+###Часть 1.Создание сети и настройка основных параметров устройства
+1. Подключил устройства согласно топологии
+2. Настроил базовые параметры каждого коммутатора
+3. Произвел базовую настройку маршрутизаторов
+4. Настроил интерфейсы и маршрутизацию
+- R1
+```
+R1(config)#ipv6 unicast-routing 
+R1(config)#interface gigabitEthernet 0/0/0
+R1(config-if)#ipv6 address 2001:db8:acad:2::1/64
+R1(config-if)#ipv6 address fe80::1 link-local 
+R1(config-if)#exit
+R1(config)#interface g0/0/1
+R1(config-if)#ipv6 address 2001:db8:acad:1::1/64
+R1(config-if)#ipv6 address fe80::1 link-local 
+R1(config-if)#exit
+R1(config)#ipv6 route ::/0 2001:db8:acad:2::2
+R1#copy running-config startup-config
+```
+- R2
+```
+R2(config)#ipv6 unicast-routing 
+R2(config)#interface gigabitEthernet 0/0/0
+R2(config-if)#ipv6 address 2001:db8:acad:2::2/64
+R2(config-if)#ipv6 address fe80::2 link-local 
+R2(config-if)#exit
+R2(config)#interface gigabitEthernet 0/0/1
+R2(config-if)#ipv6 address 2001:db8:acad:3::1/64
+R2(config-if)#ipv6 address fe80::1 link-local 
+R2(config-if)#exit
+R2(config)#ipv6 route ::/0 2001:db8:acad:2::1
+R2#copy running-config startup-config
+```
+### Часть 2.Проверка назначения адреса SLAAC от R1
