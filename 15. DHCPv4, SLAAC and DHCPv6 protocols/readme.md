@@ -198,3 +198,7 @@ R1(config-if)#ipv6 dhcp server R1-STATELESS
 R1(config-if)#exit
 ```
   
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/Lab_ping_R2.PNG">
+  
+### Часть 4.Настройка сервера DHCPv6 с сохранением состояния на R1
+  
