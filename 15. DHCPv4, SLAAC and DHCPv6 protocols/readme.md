@@ -212,4 +212,13 @@ R1(config-if)#ipv6 dhcp server R2-STATEFUL
 R1(config-if)#exit
 ```
 ### Часть 5.Настройка и проверка ретрансляции DHCPv6 на R2
-1. Включил PC-B и проверил адрес SLAAС, который он генерирует
+1. Включил PC-B и проверил адрес SLAAС, который он генерирует, проверил доступность PC-A
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/Lab_PCB_SLAAC.PNG">
+
+2. Настроил R2 в качестве агента DHCP - ретрансляции для локальной сети G0/0/1
+```
+R2(config)#interface gigabitEthernet 0/0/1
+R2(config-if)#ipv6 nd managed-config-flag
+R2(config-if)#ipv6 dhcp relay destination 2001:db8:acad:2::1 g0/0/0 - CPT не поддерживает данную команду
+R2(config-if)#exit
+```
