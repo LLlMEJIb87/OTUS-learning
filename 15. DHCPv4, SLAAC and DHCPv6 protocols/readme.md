@@ -201,4 +201,15 @@ R1(config-if)#exit
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/Lab_ping_R2.PNG">
   
 ### Часть 4.Настройка сервера DHCPv6 с сохранением состояния на R1
-  
+``` 
+R1(config)#ipv6 dhcp pool R2-STATEFUL
+R1(config-dhcpv6)#address prefix 2001:db8:acad:3:aaa::/80
+R1(config-dhcpv6)#dns-server 2001:db8:acad::254
+R1(config-dhcpv6)#domain-name STATEFUL.com
+R1(config-dhcpv6)#exit
+R1(config)#interface gigabitEthernet 0/0/0
+R1(config-if)#ipv6 dhcp server R2-STATEFUL
+R1(config-if)#exit
+```
+### Часть 5.Настройка и проверка ретрансляции DHCPv6 на R2
+1. Включил PC-B и проверил адрес SLAAС, который он генерирует
