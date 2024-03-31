@@ -215,6 +215,8 @@ R1(config-if)#exit
 1. Включил PC-B и проверил адрес SLAAС, который он генерирует, проверил доступность PC-A
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/Lab_PCB_SLAAC.PNG">
 
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/15.%20DHCPv4%2C%20SLAAC%20and%20DHCPv6%20protocols/Lab_dhcp6_pingA_to_B.PNG">
+
 2. Настроил R2 в качестве агента DHCP - ретрансляции для локальной сети G0/0/1
 ```
 R2(config)#interface gigabitEthernet 0/0/1
