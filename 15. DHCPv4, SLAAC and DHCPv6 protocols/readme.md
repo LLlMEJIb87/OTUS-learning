@@ -86,11 +86,11 @@ S1(config-if-range)#shutdown
 S1(config-if-range)#exit
 ```
 ```
-Switch(config)#interface vlan 1
-Switch(config-if)#ip address 192.168.1.98 255.255.255.224
-Switch(config-if)#exit
-Switch(config)#ip default-gateway 192.168.1.97
-Switch(config)#exit
+S2(config)#interface vlan 1
+S2(config-if)#ip address 192.168.1.98 255.255.255.240
+S2(config-if)#exit
+S2(config)#ip default-gateway 192.168.1.97
+S2(config)#exit
 ```
 8. Настроил активные интерфейсы на коммутаторе S1
 ```
