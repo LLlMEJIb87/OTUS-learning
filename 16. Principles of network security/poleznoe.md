@@ -26,6 +26,8 @@ S1(config)#end
   
 
 S1(config)#switchport port-security ?
+  
+
 aging - можно указать в течение какого времени порт будет находится в режиме error-disable
 mac-address - можем прописать в ручную статический mac - адрес
 maximum - максимальное количество mac адресов на порту
