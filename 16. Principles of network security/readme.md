@@ -107,3 +107,70 @@ S1(config-vlan)#name ParkingLot
 ```
 
 ## Часть 3. Настройки безопасности коммутатора.
+1. Настроил все магистральные порты Fa0/1 на обоих коммутаторах для использования VLAN 333 в качестве native VLAN  и отключил согласование DTP
+- S1
+```
+S1(config)#interface fastEthernet 0/1
+S1(config-if)#switchport mode trunk 
+S1(config-if)#switchport trunk native vlan 333
+S1(config-if)#switchport nonegotiate
+S1(config-if)#exit
+```
+- S2
+```
+S2(config)#interface fastEthernet 0/1
+S2(config-if)#switchport mode trunk 
+S2(config-if)#switchport trunk native vlan 333
+S1(config-if)#switchport nonegotiate
+S2(config-if)#exit
+```
+2. Настроил порты доступа
+- S1
+```
+S1(config)#interface range f0/5-6
+S1(config-if-range)#switchport mode access 
+S1(config-if-range)#switchport access vlan 10
+S1(config-if-range)#exit
+```
+- S2
+```
+S2(config)#interface f0/18
+S2(config-if)#switchport mode access 
+S2(config-if)#switchport access vlan 10
+S2(config-if)#exit
+```
+3. Отключил неиспользуемые порты и определил их в vlan 999
+- S1
+```
+S1(config)#interface range f0/2-4,f0/7-24,g0/1-2
+S1(config-if-range)#switchport mode access 
+S1(config-if-range)#switchport access vlan 999
+S1(config-if-range)#shutdown
+```
+- S2
+```
+S2(config)#interface range f0/2-17,f0/19-24,g0/1-2
+S2(config-if-range)#switchport mode access 
+S2(config-if-range)#switchport access vlan 999
+S2(config-if-range)#shutdown
+```
+4. Настройка безопасности порта
+- S1
+```
+S1(config)#interface fastEthernet 0/6
+S1(config-if)#switchport port-security 
+S1(config-if)#switchport port-security maximum 3
+S1(config-if)#switchport port-security violation restrict 
+S1(config-if)#switchport port-security aging time 60
+S1(config-if)#switchport port-security aging type inactivity - недоступно в CPT
+```
+- S2
+```
+S2(config)#interface fastEthernet 0/18
+S2(config-if)#switchport port-security 
+S2(config-if)#switchport port-security maximum 2
+S2(config-if)#switchport port-security violation protect 
+S2(config-if)#switchport port-security aging time 60
+```
+
+
