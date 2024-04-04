@@ -210,3 +210,5 @@ S2(config-if)#exit}
 
 7. Проверил доступность хостов
   
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/16.%20Principles%20of%20network%20security/ping.PNG">
+  
