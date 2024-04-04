@@ -202,6 +202,11 @@ S1(config-if)#exit
 S2(config)#spanning-tree portfast default 
 S2(config)#interface fastEthernet 0/18
 S2(config-if)#spanning-tree bpduguard enable 
-S2(config-if)#exit
+S2(config-if)#exit}
 ```
-7.
+  
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/16.%20Principles%20of%20network%20security/show_spanning-tree.PNG">
+  
+
+7. Проверил доступность хостов
+  
