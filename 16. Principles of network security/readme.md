@@ -189,4 +189,19 @@ S2(config-if)#exit
 
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/16.%20Principles%20of%20network%20security/show_ip_dhcp_snooping.PNG">
   
-6.
+6. Настройка Portfast и BPDU guard
+- S1
+```
+S1(config)#spanning-tree portfast default 
+S1(config)#interface fastEthernet 0/6
+S1(config-if)#spanning-tree bpduguard enable 
+S1(config-if)#exit
+```
+- S2
+```
+S2(config)#spanning-tree portfast default 
+S2(config)#interface fastEthernet 0/18
+S2(config-if)#spanning-tree bpduguard enable 
+S2(config-if)#exit
+```
+7.
