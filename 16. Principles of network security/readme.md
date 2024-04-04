@@ -173,4 +173,6 @@ S2(config-if)#switchport port-security violation protect
 S2(config-if)#switchport port-security aging time 60
 ```
 
-
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/16.%20Principles%20of%20network%20security/show_port-security.PNG">
+  
+5.
