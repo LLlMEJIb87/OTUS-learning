@@ -186,3 +186,7 @@ S2(config)#interface fastEthernet 0/18
 S2(config-if)#ip dhcp snooping limit rate 5
 S2(config-if)#exit
 ```
+
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/16.%20Principles%20of%20network%20security/show_ip_dhcp_snooping.PNG">
+  
+6.
