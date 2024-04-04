@@ -175,4 +175,14 @@ S2(config-if)#switchport port-security aging time 60
 
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/16.%20Principles%20of%20network%20security/show_port-security.PNG">
   
-5.
+5. Настройка DHCP Snooping
+```
+S2(config)#ip dhcp snooping 
+S2(config)#ip dhcp snooping vlan 10 
+S2(config)#interface fastEthernet 0/1
+S2(config-if)#ip dhcp snooping  trust 
+S2(config-if)#exit
+S2(config)#interface fastEthernet 0/18
+S2(config-if)#ip dhcp snooping limit rate 5
+S2(config-if)#exit
+```
