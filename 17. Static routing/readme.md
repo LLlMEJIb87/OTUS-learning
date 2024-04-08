@@ -60,11 +60,11 @@ R1(config)#ipv6 route 2001:db8:cafe:2::/64 2001:db8:acad:2::2
 R1(config)#ipv6 route 2001:db8:acad:1::/64 s0/1/0 fe80::2
 ```
   
-__show ip route__ покажет таблицу маршрутизации
-__show ip route static__ покажет только статические маршруты
-__show ip route network__ покажет запись для конкретной сети
-__show ip route | begin Gateway__ отфильтрует и покажет только интерфейсы шлюзов
-__show running-config | section ip route__ покажет настройки маршрутизации в конфиге
+- __show ip route__ покажет таблицу маршрутизации
+- __show ip route static__ покажет только статические маршруты
+- __show ip route network__ покажет запись для конкретной сети
+- __show ip route | begin Gateway__ отфильтрует и покажет только интерфейсы шлюзов
+- __show running-config | section ip route__ покажет настройки маршрутизации в конфиге
   
 __При настройки интерфейсов точка-точка, допускается следующий ввод команд__
 ```
