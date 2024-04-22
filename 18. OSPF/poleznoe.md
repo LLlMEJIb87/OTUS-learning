@@ -26,5 +26,7 @@ OSPF (англ. Open Shortest Path First) — протокол динамиче�
 4. Исполнение алгоритма SPF
 5. Выбор лучшего маршрута
   
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/18.%20OSPF/sostoyania.PNG">
+  
 
   
