@@ -86,6 +86,7 @@ R1(config)#router ospf 56
 R1(config-router)#router-id 1.1.1.1
 R1(config-router)#network 10.53.0.0 0.0.0.255 area 0 
 R1(config-router)#exit
+```
 
 - R2
 ```
@@ -107,3 +108,11 @@ R2(config)#interface loopback 1
 R2(config-if)#ip ospf 56 area 0
 R2(config-if)#exit
 ```
+  
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/18.%20OSPF/Lab_show_ip_ospf.PNG">
+  
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/18.%20OSPF/Lab_ping.PNG">
+  
+
+## Часть 3.Оптимизация и проверка конфигурации OSPFv2 для одной области
+
