@@ -144,3 +144,8 @@ R2(config-if)#exit
 R2(config)#router ospf 56
 R2(config-router)#passive-interface loopback 1
 ```
+2.
+  
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/18.%20OSPF/Lab_show_R1.PNG">
+  
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/18.%20OSPF/Lab_show_R2.PNG">
