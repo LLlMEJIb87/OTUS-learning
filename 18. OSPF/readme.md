@@ -3,3 +3,72 @@ _ _ _
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/18.%20OSPF/Lab_topologia.PNG">
 </p>
+  
+## Часть 1. Создание сети и настройка основных параметров устройства
+1. Подключил устрйотсва согласно топологии
+2. Произвел базовую настройку маршрутизаторов:
+- R1
+```
+Router#configure t
+Router(config)#hostname R1
+R1(config)#no ip domain lookup 
+R1(config)#enable secret class
+R1(config)#service password-encryption
+R1(config)#login block-for 120 attempts 3 within 60
+R1(config)#username admin privilege 15 secret cisco
+R1(config)#line console 0
+R1(config-line)#logging synchronous 
+R1(config-line)#login local
+R1(config-line)#exit
+R1(config)#banner motd "This is a secure system. Authorized Access Only!"
+R1(config)#do wr
+```
+- R2
+```
+Router#configure t
+Router(config)#hostname R2
+R2(config)#no ip domain lookup 
+R2(config)#enable secret class
+R2(config)#service password-encryption
+R2(config)#login block-for 120 attempts 3 within 60
+R2(config)#username admin privilege 15 secret cisco
+R2(config)#line console 0
+R2(config-line)#logging synchronous 
+R2(config-line)#login local
+R2(config-line)#exit
+R2(config)#banner motd "This is a secure system. Authorized Access Only!"
+R2(config)#do wr
+```
+3. Произвел базовую настройку коммутаторов:
+- S1
+```
+Switch#configure t
+Switch(config)#hostname S1
+S1(config)#no ip domain lookup 
+S1(config)#enable secret class
+S1(config)#service password-encryption
+S1(config)#username admin privilege 15 secret cisco
+S1(config)#line console 0
+S1(config-line)#logging synchronous 
+S1(config-line)#login local
+S1(config-line)#exit
+S1(config)#banner motd "This is a secure system. Authorized Access Only!"
+S1(config)#do wr
+```
+- S2
+```
+Switch#configure t
+Switch(config)#hostname S1
+S2(config)#no ip domain lookup 
+S2(config)#enable secret class
+S2(config)#service password-encryption
+S2(config)#username admin privilege 15 secret cisco
+S2(config)#line console 0
+S2(config-line)#logging synchronous 
+S2(config-line)#login local
+S2(config-line)#exit
+S2(config)#banner motd "This is a secure system. Authorized Access Only!"
+S2(config)#do wr
+```
+  
+## Часть 2. Настройка и проверка базовой работы протокола OSPFv2 для одной области
