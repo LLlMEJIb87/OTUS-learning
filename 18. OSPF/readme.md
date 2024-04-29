@@ -98,7 +98,6 @@ R2(config)#interface loopback 1
 R2(config-if)#ip address 192.168.1.1 255.255.255.0
 R2(config-if)#exit
 R2(config)#router ospf 56
-R2(config-router)#rout
 R2(config-router)#router-id 2.2.2.2
 R2(config-router)#exit
 R2(config)#int gigabitEthernet 0/0/1
@@ -115,4 +114,33 @@ R2(config-if)#exit
   
 
 ## Часть 3.Оптимизация и проверка конфигурации OSPFv2 для одной области
+1.Реализация различных оптимизаций на каждом маршрутизаторе.
+- R1
+```
+R1(config)#interface gigabitEthernet 0/0/1
+R1(config-if)#ip ospf priority 50
+R1(config-if)#ip ospf hello-interval 30
+R2(config-if)#ip ospf dead-interval 120
+R1(config-if)#exit
+R1(config)#ip route 0.0.0.0 0.0.0.0 loopback 1
+R1(config)#router ospf 56
+R1(config-router)#default-information originate 
+R1(config-router)#exit
+R1(config)#interface loopback 1
+R1(config-if)#ip ospf network point-to-point
+```
 
+
+
+- R2
+```
+R2(config)#interface gigabitEthernet 0/0/1
+R2(config-if)#ip ospf hello-interval 30
+R2(config-if)#ip ospf dead-interval 120
+R2(config-if)#exit
+R2(config)#interface loopback 1
+R2(config-if)#ip ospf network point-to-point
+R2(config-if)#exit
+R2(config)#router ospf 56
+R2(config-router)#passive-interface loopback 1
+```
