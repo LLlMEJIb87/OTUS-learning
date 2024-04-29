@@ -5,7 +5,7 @@ _ _ _
 </p>
   
 ## Часть 1. Создание сети и настройка основных параметров устройства
-1. Подключил устрйотсва согласно топологии
+1. Подключил устройства согласно топологии
 2. Произвел базовую настройку маршрутизаторов:
 - R1
 ```
@@ -72,3 +72,38 @@ S2(config)#do wr
 ```
   
 ## Часть 2. Настройка и проверка базовой работы протокола OSPFv2 для одной области
+1.Настройка адреса интерфейса и базового OSPFv2 на каждом маршрутизаторе:
+- R1
+```
+R1(config)#int g0/0/1
+R1(config-if)#ip address 10.53.0.1 255.255.255.0
+R1(config-if)#no shutdown 
+R1(config-if)#exit
+R1(config)#interface loopback 1 
+R1(config-if)#ip address 172.16.1.1 255.255.255.0
+R1(config-if)#exit
+R1(config)#router ospf 56
+R1(config-router)#router-id 1.1.1.1
+R1(config-router)#network 10.53.0.0 0.0.0.255 area 0 
+R1(config-router)#exit
+
+- R2
+```
+R2(config)#int g0/0/1
+R2(config-if)#ip address 10.53.0.2 255.255.255.0
+R2(config-if)#no shutdown 
+R2(config-if)#exit
+R2(config)#interface loopback 1 
+R2(config-if)#ip address 192.168.1.1 255.255.255.0
+R2(config-if)#exit
+R2(config)#router ospf 56
+R2(config-router)#rout
+R2(config-router)#router-id 2.2.2.2
+R2(config-router)#exit
+R2(config)#int gigabitEthernet 0/0/1
+R2(config-if)#ip ospf 56 area 0
+R2(config-if)#exit
+R2(config)#interface loopback 1
+R2(config-if)#ip ospf 56 area 0
+R2(config-if)#exit
+```
