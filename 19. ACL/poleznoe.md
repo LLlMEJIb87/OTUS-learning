@@ -70,3 +70,6 @@ R1(config-if)#no ip access-group TEST in или out - отвязать ACL с и
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Redaktirovanie_ACL_2.PNG">
   
 ___Настройка ACL для фильтрации трафика VTY___
+  
+
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/ACL_VTY.PNG">
