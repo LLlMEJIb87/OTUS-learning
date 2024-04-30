@@ -61,9 +61,12 @@ R1(config-if)#no ip access-group TEST in или out - отвязать ACL с и
 ```
 - Для просмотра конфигурации ACL используйте команду ___show running-config___
 - Для проверки правильности применения списка контроля доступа к интерфейсу используйте команду ___show ip interface___
-- Для просмотра конфигурации ACL используйте команду show access-list.
+- Для просмотра конфигурации ACL используйте команду ___show access-list___
+- Для очистки счетчиков ACL используйте команду  ___clear access-list counters___
   
 ### Редактирование ACL
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Redaktirovanie_ACL.PNG">
   
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Redaktirovanie_ACL_2.PNG">
+  
+___Настройка ACL для фильтрации трафика VTY___
