@@ -64,3 +64,6 @@ R1(config-if)#no ip access-group TEST in или out - отвязать ACL с и
 - Для просмотра конфигурации ACL используйте команду show access-list.
   
 ### Редактирование ACL
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Redaktirovanie_ACL.PNG">
+  
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Redaktirovanie_ACL_2.PNG">
