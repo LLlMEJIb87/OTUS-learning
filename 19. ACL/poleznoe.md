@@ -69,7 +69,19 @@ R1(config-if)#no ip access-group TEST in или out - отвязать ACL с и
   
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Redaktirovanie_ACL_2.PNG">
   
-___Настройка ACL для фильтрации трафика VTY___
+### Настройка ACL для фильтрации трафика VTY
   
 
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/ACL_VTY.PNG">
+
+  
+## ACL extended
+_ _ _
+
+Расширенный ACL отличается тем, что маршрутизатор буде заглядывать глубже в IP пакет, а именно в сегмент (TCP/UDP) тем самы можно настройить фильтрацию более тонко, к примеру заблокировать доступ к определенной службе.
+```
+R1(config)#ip access-list extended TEST - создать расширенный ACL
+R1(config-ext-nacl)#permit(разрешить) tcp(протокол) any(IP источника) any(IP назначения) eq(ровно) 23(порт службы) - синтаксис
+R1(config)#interface gigabitEthernet 0/0/0
+R1(config-if)#ip access-group TEST in - привязать ACL на интерфейс (in - на вход, out - на выход)
+```
