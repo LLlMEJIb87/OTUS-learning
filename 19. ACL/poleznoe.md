@@ -87,3 +87,9 @@ R1(config-if)#ip access-group TEST in - привязать ACL на интерф
 ```
   
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/established.PNG">
+  
+```
+R1(config-ext-nacl)#permit tcp any 192.168.10.0 0.0.0.255 established - ACL настроен так, чтобы разрешить возврат веб-трафика, только на внутренние узлы
+```
+  
+
