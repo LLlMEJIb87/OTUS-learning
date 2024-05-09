@@ -2,7 +2,7 @@
 _ _ _
   
 <p align="center">
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Lab_topologia">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Lab_topologia.PNG">
 </p>
   
 
