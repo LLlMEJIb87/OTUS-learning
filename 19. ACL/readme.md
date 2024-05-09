@@ -125,7 +125,7 @@ S2(config)#interface vlan 20
 S2(config-if)#ip address 10.20.0.3 255.255.255.0
 S2(config-if)#exit
 S2(config)#ip default-gateway 10.20.0.1
-S2(config)#interface range f0/2-17,f0/19-24,g0/1-2
+S2(config)#interface range f0/2-4,f0/6-24,f0/19-24,g0/1-2
 S2(config-if-range)#switchport mode access 
 S2(config-if-range)#switchport access vlan 999
 S2(config-if-range)#shutdown
@@ -148,3 +148,59 @@ S2(config)#interface fastEthernet 0/18
 S2(config-if)#switchport access vlan 40
 ```
 
+## 3. Часть 3. Настроил транки (магистральные каналы)
+- S1
+```
+S1(config)#interface fastEthernet 0/1
+S1(config-if)#switchport mode trunk 
+S1(config-if)#switchport trunk allowed vlan 20,30,40,1000
+S1(config-if)#switchport trunk native vlan 1000
+S1(config-if)#switchport nonegotiate 
+S2(config-if)#exit
+S1(config)#interface fastEthernet 0/5
+S1(config-if)#switchport mode trunk 
+S1(config-if)#switchport trunk allowed vlan 20,30,40,1000	
+S1(config-if)#switchport trunk native vlan 1000
+S1(config-if)#switchport nonegotiate 
+```
+- S2
+```
+S2(config)#interface fastEthernet 0/1
+S2(config-if)#switchport mode trunk 
+S2(config-if)#switchport trunk allowed vlan 20,30,40,1000
+S2(config-if)#switchport trunk native vlan 1000
+S2(config-if)#switchport nonegotiate 
+```
+## Часть 4. Настроил маршрутизацию
+- R1
+```
+R1(config)#interface gigabitEthernet 0/0/1.20
+R1(config-subif)#encapsulation dot1Q 20
+R1(config-subif)#ip address 10.20.0.1 255.255.255.0
+R1(config-subif)#description Managment
+R1(config-subif)#exit
+R1(config)#interface gigabitEthernet 0/0/1.30
+R1(config-subif)#encapsulation dot1Q 30
+R1(config-subif)#ip address 10.30.0.1 255.255.255.0
+R1(config-subif)#description Operations
+R1(config-subif)#exit
+R1(config)#interface gigabitEthernet 0/0/1.40
+R1(config-subif)#encapsulation dot1Q 40
+R1(config-subif)#ip address 10.40.0.1 255.255.255.0
+R1(config-subif)#description Sales
+R1(config-subif)#exit
+R1(config)#interface gigabitEthernet 0/0/1.1000
+R1(config-subif)#encapsulation dot1Q 1000 native
+R1(config-subif)#description native
+R1(config-subif)#exit
+R1(config)#interface gigabitEthernet 0/0/1
+R1(config-if)#no shutdown 
+```
+- R2
+```
+R2(config)#interface gigabitEthernet 0/0/1
+R2(config-if)#ip address 10.20.0.4 255.255.255.0
+R2(config-if)#no shutdown 
+R2(config-if)#exit
+R2(config)#ip route 172.16.1.0 255.255.255.0 10.20.0.1
+```
