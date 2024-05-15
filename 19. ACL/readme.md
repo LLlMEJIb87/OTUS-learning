@@ -256,3 +256,10 @@ S2(config-line)#exit
 ```
   
 ## Часть 6. Проверка доступности узлов
+- Ping PC A to PC B & R1. g0/0/1.20
+
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Lab_ping_A_to.PNG">
+  
+- Ping PC B to R1 loopback & sshloopback
+
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Lab_ping_B_to.PNG">
