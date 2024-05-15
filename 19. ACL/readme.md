@@ -148,7 +148,7 @@ S2(config)#interface fastEthernet 0/18
 S2(config-if)#switchport access vlan 40
 ```
 
-## 3. Часть 3. Настроил транки (магистральные каналы)
+## Часть 3. Настроил транки (магистральные каналы)
 - S1
 ```
 S1(config)#interface fastEthernet 0/1
@@ -204,3 +204,55 @@ R2(config-if)#no shutdown
 R2(config-if)#exit
 R2(config)#ip route 172.16.1.0 255.255.255.0 10.20.0.1
 ```
+
+## Часть 5. Настроил удаленный доступ по SSH
+- R1
+```
+R1(config)#username SSHadmin privilege 15 secret $cisco123!
+R1(config)#ip domain-name venya.net
+R1(config)#crypto key generate rsa general-keys modulus 1024
+R1(config)#ip ssh version 2
+R1(config)#line vty 0 5
+R1(config-line)#login local
+R1(config-line)#transport input ssh
+R1(config-line)#exit
+R1(config)#ip http secure-server - не поддерживается в cpt
+R1(config)#ip http authentication local - не поддерживается в cpt
+```
+- R2
+```
+R2(config)#username SSHadmin privilege 15 secret $cisco123!
+R2(config)#ip domain-name venya.net
+R2(config)#crypto key generate rsa general-keys modulus 1024
+R2(config)#ip ssh version 2
+R2(config)#line vty 0 5
+R2(config-line)#login local
+R2(config-line)#transport input ssh
+R2(config-line)#exit
+```
+
+
+- S1
+```
+S1(config)#username SSHadmin privilege 15 secret $cisco123!
+S1(config)#ip domain-name venya.net
+S1(config)#crypto key generate rsa general-keys modulus 1024
+S1(config)#ip ssh version 2
+S1(config)#line vty 0 5
+S1(config-line)#login local
+S1(config-line)#transport input ssh
+S1(config-line)#exit
+```
+- S2
+```
+S2(config)#username SSHadmin privilege 15 secret $cisco123!
+S2(config)#ip domain-name venya.net
+S2(config)#crypto key generate rsa general-keys modulus 1024
+S2(config)#ip ssh version 2
+S2(config)#line vty 0 5
+S2(config-line)#login local
+S2(config-line)#transport input ssh
+S2(config-line)#exit
+```
+  
+## Часть 6. Проверка доступности узлов
