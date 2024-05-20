@@ -195,6 +195,8 @@ R1(config-subif)#description native
 R1(config-subif)#exit
 R1(config)#interface gigabitEthernet 0/0/1
 R1(config-if)#no shutdown 
+R1(config)#interface loopback 0
+R1(config-if)#ip address 172.16.1.1 255.255.255.0
 ```
 - R2
 ```
@@ -263,3 +265,49 @@ S2(config-line)#exit
 - Ping PC B to R1 loopback & sshloopback
 
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/19.%20ACL/Lab_ping_B_to.PNG">
+  
+## Часть 7. Настройка и проверка списков контроля доступа (ACL)
+Политика1. Сеть Sales не может использовать SSH в сети Management (но в  другие сети SSH разрешен)
+```
+R1(config)#ip access-list extended Sales
+R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.20.0.0 0.0.0.255 eq 22
+...
+```
+
+  
+Политика 2. Сеть Sales не имеет доступа к IP-адресам в сети Management с помощью любого веб-протокола (HTTP/HTTPS). Сеть Sales также не имеет доступа к интерфейсам R1 с помощью любого веб-протокола. Разрешён весь другой веб-трафик (обратите внимание — Сеть Sales  может получить доступ к интерфейсу Loopback 1 на R1).
+```
+...
+R1(config-ext-nacl)#permit ip 10.40.0.0 0.0.0.255 172.16.1.1 0.0.0.255 
+R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.20.0.0 0.0.0.255 eq 80
+R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.20.0.0 0.0.0.255 eq 443
+R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.30.0.0 0.0.0.255 eq 80
+R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.30.0.0 0.0.0.255 eq 443
+R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.40.0.0 0.0.0.255 eq 80
+R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.40.0.0 0.0.0.255 eq 443
+...
+```
+По условию политики сеть Sales не имеет доступа в сеть Managment по портам 80 и 443, так же далее в задаче оговорено, что она не имеет доступа и к интерфейсам R1 по этим портам, поэтому выбрано решение использовать только адреса интерфейсов для запрета,а не адреса сетей. Так как сеть sales подключена к интерфейсу маршрутизатора и по условии задачи не имеет доступа на интерфейс по портам 80 и 443, но должна имееть доступ на lo интерфейс, то перед запрещающим правилом вставляем разрешающее правило для пропуска всего трафика на lo интерфейс маршрутизатора.
+  
+Политика3. Сеть Sales не может отправлять эхо-запросы ICMP в сети Operations или Management. Разрешены эхо-запросы ICMP к другим адресатам. 
+```
+...
+R1(config-ext-nacl)#deny icmp 10.40.0.0 0.0.0.255 10.30.0.0 0.0.0.255
+R1(config-ext-nacl)#deny icmp 10.40.0.0 0.0.0.255 10.20.0.0 0.0.0.255
+R1(config-ext-nacl)#permit ip any any
+R1(config-ext-nacl)#deny ip any any
+```
+Вешаем ACL Sales на интерфейс g0/0/1.40 in
+```
+R1(config)#interface gigabitEthernet 0/0/1.40
+R1(config-subif)#ip access-group Sales in
+```
+
+Политика 4: Cеть Operations  не может отправлять ICMP эхозапросы в сеть Sales. Разрешены эхо-запросы ICMP к другим адресатам. 
+```
+R1(config)#ip access-list extended Operators
+R1(config-ext-nacl)#deny icmp 10.30.0.0 0.0.0.255 10.40.0.0 0.0.0.255
+R1(config-ext-nacl)#exit
+R1(config)#interface gigabitEthernet 0/0/1.30
+R1(config-subif)#ip access-group Operators in
+```
