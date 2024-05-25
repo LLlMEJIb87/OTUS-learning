@@ -87,6 +87,7 @@ RLeft(config-if)#exit
 ```
 
 Пример настройки динамического PAT :
+```
 RLeft(config)#ip nat pool WS_POOL 8.8.8.4 8.8.8.8 netmask 255.255.255.0 
 Left(config)#ip access-list standard NAT_ACC
 RLeft(config-std-nacl)#permit 192.168.1.0 255.255.255.0
