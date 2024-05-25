@@ -48,4 +48,16 @@ ip nat inside source list NAT_POOL pool PUBLIC_ACCESS overload
   
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/20.%20NAT/LAB_PAT_translation.PNG">
 
-При такой кофигурации все устройства в сети одновременно могут иметь выход во внешнюю сеть, но все он натятся в один IP адрес.
+При такой кофигурации все устройства в сети одновременно могут иметь выход во внешнюю сеть. Все они натятся в один IP адрес, что не целесообразно в нашем сценарии, так как часть адресов не задействуется.
+  
+4. На R1 удалил команды преобразования nat pool
+```
+R1(config)#no ip nat inside source list NAT_POOL pool PUBLIC_ACCESS overload 
+R1(config)#no ip nat pool PUBLIC_ACCESS
+```
+5. Добавил команду PAT overload, указав внешний интерфейс.
+```
+R1(config)#ip nat inside source list NAT_POOL interface g0/0/0 overload
+```
+6. Проверка конфигурации
+
