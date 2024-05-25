@@ -45,4 +45,7 @@ R1(config)#no ip nat inside source list NAT_POOL pool PUBLIC_ACCESS
 ip nat inside source list NAT_POOL pool PUBLIC_ACCESS overload
 ```
 3. Проверка кофигурации.
+  
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/20.%20NAT/LAB_PAT_translation.PNG">
+
 При такой кофигурации все устройства в сети одновременно могут иметь выход во внешнюю сеть, но все он натятся в один IP адрес.
