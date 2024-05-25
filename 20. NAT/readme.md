@@ -42,7 +42,7 @@ R1(config)#no ip nat inside source list NAT_POOL pool PUBLIC_ACCESS
 ```
 2. Добавил команду PAT на R1
 ```
-ip nat inside source list NAT_POOL pool PUBLIC_ACCESS overload
+R1(config)#ip nat inside source list NAT_POOL pool PUBLIC_ACCESS overload
 ```
 3. Проверка кофигурации.
   
@@ -77,6 +77,6 @@ R1(config)#ip nat inside source static 192.168.1.2 209.165.200.229
 3. Проверил конфигурацию
   
 
-Запустил ping c сервера до ПК A и посомтрел трансляцию на R1
+Запустил ping c сервера до ПК A и посмотрел трансляцию на R1
   
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/20.%20NAT/LAB_NAT_translation2.PNG">
