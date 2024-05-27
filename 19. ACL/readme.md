@@ -306,6 +306,7 @@ R1(config-subif)#ip access-group Sales in
 ```
 R1(config)#ip access-list extended Operators
 R1(config-ext-nacl)#deny icmp 10.30.0.0 0.0.0.255 10.40.0.0 0.0.0.255
+R1(config-ext-nacl)#permit ip any any
 R1(config-ext-nacl)#exit
 R1(config)#interface gigabitEthernet 0/0/1.30
 R1(config-subif)#ip access-group Operators in
