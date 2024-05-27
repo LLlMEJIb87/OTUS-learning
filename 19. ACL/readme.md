@@ -278,13 +278,10 @@ R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.20.0.0 0.0.0.255 eq 22
 Политика 2. Сеть Sales не имеет доступа к IP-адресам в сети Management с помощью любого веб-протокола (HTTP/HTTPS). Сеть Sales также не имеет доступа к интерфейсам R1 с помощью любого веб-протокола. Разрешён весь другой веб-трафик (обратите внимание — Сеть Sales  может получить доступ к интерфейсу Loopback 1 на R1).
 ```
 ...
-R1(config-ext-nacl)#permit ip 10.40.0.0 0.0.0.255 172.16.1.1 0.0.0.255 
-R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.20.0.0 0.0.0.255 eq 80
-R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.20.0.0 0.0.0.255 eq 443
-R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.30.0.0 0.0.0.255 eq 80
-R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.30.0.0 0.0.0.255 eq 443
-R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.40.0.0 0.0.0.255 eq 80
-R1(config-ext-nacl)#deny tcp 10.40.0.0 0.0.0.255 10.40.0.0 0.0.0.255 eq 443
+deny tcp 10.40.0.0 0.0.0.255 host 10.20.0.1 eq www
+deny tcp 10.40.0.0 0.0.0.255 host 10.20.0.1 eq 443
+deny tcp 10.40.0.0 0.0.0.255 host 10.30.0.1 eq www
+deny tcp 10.40.0.0 0.0.0.255 host 10.30.0.1 eq 443
 ...
 ```
   
@@ -307,6 +304,7 @@ R1(config-subif)#ip access-group Sales in
 R1(config)#ip access-list extended Operators
 R1(config-ext-nacl)#deny icmp 10.30.0.0 0.0.0.255 10.40.0.0 0.0.0.255
 R1(config-ext-nacl)#permit ip any any
+R1(config-ext-nacl)#deny ip any any
 R1(config-ext-nacl)#exit
 R1(config)#interface gigabitEthernet 0/0/1.30
 R1(config-subif)#ip access-group Operators in
