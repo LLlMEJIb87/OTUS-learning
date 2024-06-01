@@ -51,3 +51,21 @@ S2(config)#LLDP run
 ```
 S1#show lldp entry S2 - не поддерживается в CPT
 ```
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/LAB_show_lldp.PNG">
+  
+## Часть 4. Настройка NTP
+```
+R1#clock set 14:00:00 01 jun 2024
+R1#conf t
+R1(config)#ntp master 4 
+```
+```
+S1(config)#ntp server 10.22.0.1 
+S1(config)#end
+S1#show clock
+14:5:25.310 UTC Sat Jun 1 2024
+```
+```
+S2(config)#ntp server 10.22.0.1 
+S2(config)#end
+```
