@@ -98,3 +98,7 @@ SetRequest-PDU от диспетчера сети. Агент SNMP изменя�
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/OID.PNG">
 </p>
   
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/OID_2.PNG">
+</p>
+  
