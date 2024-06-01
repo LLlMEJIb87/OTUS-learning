@@ -16,8 +16,7 @@ _ _ _
   
 ## Часть 2. Обнаружение сетевых ресурсов с помощью протокола CDP
 
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/LAB_show_CDP.PNG"
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/LAB_show_CDP.PNG">
 
-Далее настроил адресацию и проверил еще раз:
 
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/LAB_show_CDP_2.PNG"
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/LAB_show_CDP_2.PNG">
