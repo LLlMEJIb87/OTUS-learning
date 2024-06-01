@@ -69,3 +69,5 @@ S1#show clock
 S2(config)#ntp server 10.22.0.1 
 S2(config)#end
 ```
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/LAB_show_ntp_s2.PNG">
+  
