@@ -20,3 +20,34 @@ _ _ _
 
 
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/21.%20LLDP%2CNTP%2CSNMP/LAB_show_CDP_2.PNG">
+  
+```
+S1#show cdp traffic - не поддерживается в CPT
+```
+
+Отключил СDP на всех устройствах
+ 
+```
+R1(config)#no cdp run
+```
+```
+S1(config)#no cdp run
+```
+```
+S2(config)#no cdp run
+```
+
+## Часть 3. Обнаружение сетевых ресурсов с помощью протокола LLDP
+Включил LLDP
+```
+R1(config)#LLDP run
+```
+```
+S1(config)#LLDP run
+```
+```
+S2(config)#LLDP run
+```
+```
+S1#show lldp entry S2 - не поддерживается в CPT
+```
