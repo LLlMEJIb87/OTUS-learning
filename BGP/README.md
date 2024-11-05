@@ -31,7 +31,7 @@ _ _  _
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/BGP/Picture/BGP_UPDATE.PNG">
 </p>    
 
-R1 передаёт маршрутную информацию на R2. 
+R1 передаёт маршрутную информацию на R2.     
 **NLRI** – Network Layer Reachability Information  - информация о маршрутах      
 **AS_PATH** означает, что маршрут пришёл из AS с номером 100.    
 **NEXT_HOP** – что логично, информация для R2, что указывать в качестве шлюза для данного маршрута.    
