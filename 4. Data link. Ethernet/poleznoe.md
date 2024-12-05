@@ -26,6 +26,10 @@ Point-to-Point Protocol - протокол двухточечного соеди
 2. LCP протокол управления каналом, позволяющий устанавливать соединения, тестировать их, договариваться о параметрах.
 3. NCP - сетевой протокол управления ( для каждого сетевого уровня имеется свой)
 
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/PPP.PNG">
+</p>
+
 ## Ethernet.
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
