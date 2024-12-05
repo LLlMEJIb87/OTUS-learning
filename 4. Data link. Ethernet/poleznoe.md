@@ -35,6 +35,11 @@ Point-to-Point Protocol - протокол двухточечного соеди
 3. Управляющее поле 00000011 - означает ненумерованный фрейм (1 байт)
 4. Протокол - определяет тип пакета, который содержится в PlayLoad (1 или 2 байт) (если в начале идет 0 - речь о сетевом уровне, если 1 - конфигурационные протоколы (служебные))
 5. Контрольная сумма (2 или 4 байта)
+
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/PPP_connected.PNG">
+</p>    
+
 ## Ethernet.
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
