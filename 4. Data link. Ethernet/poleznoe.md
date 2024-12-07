@@ -53,6 +53,8 @@ __Установка соединения PPP__
 6. Terminate - переход в это состояние после окончания передачи данных    
 
 ## Ethernet.
+__Ethernet__ - технология для объеденения устройств в сеть.
+
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
 </p>
