@@ -64,5 +64,7 @@ __Ethernet__ - технология для объеденения устройс
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
 </p>
 
+## WI-FI 802.11
+Cпособ передачи данных в беспроводной среде. В отличие от ethernet радиопередатчики устройств работают в полудуплексном режиме. Wi-FI использует протокол CSMA/CA для предотвращения коллизий в сети, так же используется связь с подтверждением доставки
 
 ### [ Уровень 3: Сетевой.](https://github.com/LLlMEJIb87/OTUS-learning/tree/master/5.%20Network%20layer.%20IP)
