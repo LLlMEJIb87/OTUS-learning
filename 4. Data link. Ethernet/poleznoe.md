@@ -67,7 +67,7 @@ __Ethernet__ - технология для объеденения устройс
 ### Ethernet. 802.1Q VLAN
 
 <p align="center">
-<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/dot1q.PNG">
 </p>    
 
 
