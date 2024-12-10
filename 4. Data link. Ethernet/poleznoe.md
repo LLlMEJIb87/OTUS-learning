@@ -62,7 +62,23 @@ __Ethernet__ - технология для объеденения устройс
 
 <p align="center">
 <image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
-</p>
+</p> 
+
+### Ethernet. 802.1Q VLAN
+
+<p align="center">
+<image src="https://github.com/LLlMEJIb87/OTUS-learning/blob/master/4.%20Data%20link.%20Ethernet/frame.PNG">
+</p>    
+
+
+Добавлены 2 2х байтных поля:
+1. Идентификатор протокола ТЭГА TPID (2 байта) всегда 0x8100
+2. Tag Control Information (2 байта)
+- VLAN ID (12 бит) - идентификатор vlan
+- Priority (3 бит) - приоритет ( позволяет различать трафик реального времени и трафик для которого время не критично)
+- CFI (1 бит) - индикатор классического формата
+
+
 
 ## WI-FI 802.11
 Cпособ передачи данных в беспроводной среде. В отличие от ethernet радиопередатчики устройств работают в полудуплексном режиме. Wi-FI использует протокол CSMA/CA для предотвращения коллизий в сети, так же используется связь с подтверждением доставки     
